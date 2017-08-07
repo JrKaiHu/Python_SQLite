@@ -9,3 +9,4 @@ Python database by using SQLite
 6. SQLiteEx03 : SELECT Operation
 7. SQLiteEx04 : UPDATE Operation.
 8. SQLiteEx05 : DELETE Operation.
+9. IDE : Pycharm.
