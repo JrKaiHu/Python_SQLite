@@ -6,8 +6,10 @@ def main():
     conn = sqlite3.connect('..//test.db')
     print("Opened database successfully")
     print()
-    
-    cursor = conn.execute("SELECT id, name, address, salary  FROM COMPANY")
+
+    cursor = conn.cursor()
+
+    cursor = cursor.execute("SELECT id, name, address, salary  FROM COMPANY")
     for row in cursor:
         print("ID = %d" % row[0])
         print("NAME = %s" % row[1])
@@ -15,7 +17,7 @@ def main():
         print("SALARY = %f" % row[3])
         print()
 
-    cursor = conn.execute("SELECT * FROM COMPANY WHERE AGE = 25")
+    cursor = cursor.execute("SELECT * FROM COMPANY WHERE AGE = 25")
     for row in cursor:
         print("ID = %d" % row[0])
         print("NAME = %s" % row[1])
@@ -25,6 +27,8 @@ def main():
         print()
 
     print("Operation done successfully")
+
+    cursor.close()
 
     conn.close()
 

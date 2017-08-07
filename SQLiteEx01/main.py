@@ -12,7 +12,9 @@ def main():
     conn = sqlite3.connect('..//test.db')
     print("Opened database successfully")
 
-    conn.execute(" CREATE TABLE COMPANY \
+    cursor = conn.cursor()
+
+    cursor.execute(" CREATE TABLE COMPANY \
                    (ID INT PRIMARY KEY     NOT NULL, \
                     NAME           TEXT    NOT NULL, \
                     AGE            INT     NOT NULL, \
@@ -20,6 +22,8 @@ def main():
                     SALARY         REAL); ")
 
     print("Table created successfully")
+
+    cursor.close()
 
     conn.close()
 
